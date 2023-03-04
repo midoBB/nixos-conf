@@ -43,10 +43,6 @@
     gvfs.enable = true; # These are needed for PCman FM and for distant shares
     udisks2.enable = true;
     devmon.enable = true;
-    gpg-agent = {
-      enable = true;
-      pinentryFlavor = "qt";
-    };
     xserver = {
       layout = "fr"; # XServer keyboard layout
       enable = true; # Enable XServer
@@ -180,6 +176,10 @@
     ];
   };
 
+  programs.gpg.agent = { # needed for git-crypt
+    enable = true;
+    pinentryFlavor = "qt";
+  };
   system = {
     # NixOS settings
     autoUpgrade = {
